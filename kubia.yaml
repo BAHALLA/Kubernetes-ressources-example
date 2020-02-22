@@ -1,0 +1,10 @@
+apiServer: v1
+kind: Pod
+metadata:
+    name: kubia-gpu
+spec:
+    nodeSelector:
+        gpu: "true"
+    containers:
+     - image: bahalla/kubia
+       name: kubia

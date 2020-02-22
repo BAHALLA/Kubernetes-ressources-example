@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+    name: job
+spec:
+    template:
+        metadata:
+            labels:
+                app: job
+        spec:
+            completions: 5
+            restartPolicy: onFailure
+            containers:
+                - name: batch-job
+                  image: bahalla/batch-job

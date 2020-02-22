@@ -1,0 +1,13 @@
+apiServer: v1
+kind: Pod
+metadata:
+    name: kubia-liveness-prob
+spec:
+    containers:
+    - image: bahalla/kubia
+      name: kubia
+    livenessProbe:
+        httpGet:
+            path: /
+            port: 8000
+        initialDelaySeconds: 15
